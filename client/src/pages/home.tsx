@@ -24,12 +24,14 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { useLocation } from "wouter";
 
 export default function Home() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
+  const [, navigate] = useLocation();
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
@@ -316,6 +318,7 @@ export default function Home() {
                   variant="outline"
                   className="bg-white/10 hover:bg-white/20 text-white border-white/30 backdrop-blur-sm font-semibold text-base px-8"
                   data-testid="button-ver-demo"
+                  onClick={() => navigate("/demo")}
                 >
                   Ver Demonstração
                 </Button>
