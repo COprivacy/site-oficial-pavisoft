@@ -638,13 +638,13 @@ export default function Home() {
                 >
                   Termos de Uso
                 </a>
-                <a
-                  href="#"
+                <button
+                  onClick={() => navigate("/privacy")}
                   className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                   data-testid="footer-link-privacidade"
                 >
                   Política de Privacidade
-                </a>
+                </button>
               </div>
             </div>
 
