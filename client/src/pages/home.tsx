@@ -631,13 +631,13 @@ export default function Home() {
                 >
                   Preços
                 </button>
-                <a
-                  href="#"
+                <button
+                  onClick={() => navigate("/terms")}
                   className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                   data-testid="footer-link-termos"
                 >
                   Termos de Uso
-                </a>
+                </button>
                 <button
                   onClick={() => navigate("/privacy")}
                   className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors"
