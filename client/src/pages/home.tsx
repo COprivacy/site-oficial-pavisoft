@@ -108,6 +108,11 @@ export default function Home() {
       description: "Exportação de relatórios em PDF com análises semanais detalhadas",
     },
     {
+      icon: Database,
+      title: "Inventário Completo",
+      description: "Gestão avançada de estoque com rastreamento de entradas, saídas e movimentações",
+    },
+    {
       icon: Calendar,
       title: "Controle de Vencimento",
       description: "Monitore produtos próximos ao vencimento e gerencie o inventário",
