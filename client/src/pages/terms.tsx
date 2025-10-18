@@ -122,7 +122,7 @@ export default function Terms() {
                   O plano gratuito oferece funcionalidades básicas com limitações de uso, incluindo:
                 </p>
                 <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
-                  <li>Limite de até 100 produtos cadastrados</li>
+                  <li>Limite de até 50 produtos cadastrados</li>
                   <li>Relatórios básicos</li>
                   <li>Suporte por email</li>
                 </ul>
