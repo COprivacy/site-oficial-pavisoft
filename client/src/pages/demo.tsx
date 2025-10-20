@@ -11,6 +11,7 @@ import pdvImg from "@assets/ponto de venda_1760974550062.png";
 import relatoriosImg from "@assets/relatorios_1760974550062.png";
 import inventarioImg from "@assets/inventário_1760974550062.png";
 import clientesImg from "@assets/clientes_1760974550060.png";
+import fornecedoresImg from "@assets/fornecedores_1760974550060.png";
 
 export default function Demo() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -62,6 +63,11 @@ export default function Demo() {
       title: "Gestão de Clientes",
       description: "Cadastro completo com histórico de compras",
       image: clientesImg,
+    },
+    {
+      title: "Gestão de Fornecedores",
+      description: "Gerencie seus fornecedores e histórico de compras",
+      image: fornecedoresImg,
     },
   ];
 
