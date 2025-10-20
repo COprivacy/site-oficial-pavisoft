@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { Package, Moon, Sun, ArrowLeft, Play } from "lucide-react";
+import { Package, Moon, Sun, ArrowLeft, Play, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
 import { useLocation } from "wouter";
 
 import dashboardImg from "@assets/dashboard_1760974550061.png";
@@ -14,6 +15,7 @@ import clientesImg from "@assets/clientes_1760974550060.png";
 export default function Demo() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
   const [, navigate] = useLocation();
+  const [selectedImage, setSelectedImage] = useState<{ src: string; title: string } | null>(null);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
@@ -124,13 +126,22 @@ export default function Demo() {
                 className="overflow-hidden hover-elevate transition-all duration-300 rounded-2xl border border-card-border"
                 data-testid={`card-screenshot-${index + 1}`}
               >
-                <div className="aspect-video bg-muted relative overflow-hidden">
+                <div 
+                  className="aspect-video bg-muted relative overflow-hidden cursor-pointer group"
+                  onClick={() => setSelectedImage({ src: screenshot.image, title: screenshot.title })}
+                  data-testid={`button-preview-${index + 1}`}
+                >
                   <img
                     src={screenshot.image}
                     alt={screenshot.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                     data-testid={`img-screenshot-${index + 1}`}
                   />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+                    <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50 px-4 py-2 rounded-lg">
+                      Clique para ampliar
+                    </div>
+                  </div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-lg font-semibold text-foreground mb-2" data-testid={`text-title-${index + 1}`}>
@@ -250,6 +261,36 @@ export default function Demo() {
           </Button>
         </div>
       </footer>
+
+      <Dialog open={!!selectedImage} onOpenChange={(open) => !open && setSelectedImage(null)}>
+        <DialogContent className="max-w-7xl w-[95vw] h-[95vh] p-0 bg-background/95 backdrop-blur-sm" data-testid="dialog-image-preview">
+          <DialogClose className="absolute right-4 top-4 z-50 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
+            <Button
+              size="icon"
+              variant="ghost"
+              className="h-10 w-10 bg-background/80 hover:bg-background"
+              data-testid="button-close-preview"
+            >
+              <X className="h-6 w-6" />
+            </Button>
+          </DialogClose>
+          {selectedImage && (
+            <div className="flex flex-col items-center justify-center h-full p-6">
+              <h2 className="text-2xl font-bold text-foreground mb-4" data-testid="text-preview-title">
+                {selectedImage.title}
+              </h2>
+              <div className="relative w-full h-full flex items-center justify-center">
+                <img
+                  src={selectedImage.src}
+                  alt={selectedImage.title}
+                  className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+                  data-testid="img-preview-full"
+                />
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
