@@ -18,10 +18,10 @@ import {
   Check,
   Mail,
   Facebook,
-  Twitter,
   Instagram,
   Linkedin,
 } from "lucide-react";
+import { SiX } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useLocation } from "wouter";
@@ -673,9 +673,9 @@ export default function Home() {
                 <a
                   href="#"
                   className="w-10 h-10 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-md flex items-center justify-center transition-colors"
-                  data-testid="social-twitter"
+                  data-testid="social-x"
                 >
-                  <Twitter className="w-5 h-5" />
+                  <SiX className="w-5 h-5" />
                 </a>
                 <a
                   href="https://www.instagram.com/pavisoftsistemas/"
