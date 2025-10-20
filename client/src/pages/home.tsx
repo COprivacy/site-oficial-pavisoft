@@ -678,7 +678,9 @@ export default function Home() {
                   <Twitter className="w-5 h-5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/pavisoftsistemas/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-md flex items-center justify-center transition-colors"
                   data-testid="social-instagram"
                 >
