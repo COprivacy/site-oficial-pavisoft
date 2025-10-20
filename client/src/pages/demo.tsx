@@ -23,6 +23,11 @@ export default function Demo() {
     if (savedTheme) {
       setTheme(savedTheme);
       document.documentElement.classList.toggle("dark", savedTheme === "dark");
+    } else {
+      // Define tema escuro como padrão
+      setTheme("dark");
+      localStorage.setItem("theme", "dark");
+      document.documentElement.classList.add("dark");
     }
   }, []);
 
