@@ -291,17 +291,17 @@ export default function Home() {
         id="inicio"
         className="relative min-h-screen flex items-center justify-center overflow-hidden pt-18"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-ring" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/30 via-transparent to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(251,146,60,0.15),transparent_50%)]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/80 to-accent/20" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(251,146,60,0.25),transparent_50%),radial-gradient(ellipse_at_bottom_left,rgba(59,130,246,0.25),transparent_50%)]" />
+        <div className="absolute inset-0 backdrop-blur-[1px]" />
 
         <div className="relative max-w-7xl mx-auto px-6 py-20 lg:py-32">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight">
                 Controle total do seu estoque com apenas alguns cliques
               </h1>
-              <p className="text-lg sm:text-xl text-white/90 mb-8 leading-relaxed">
+              <p className="text-xl sm:text-2xl text-white/95 mb-10 leading-relaxed font-light">
                 Um sistema completo, visual e fácil de usar para pequenas e
                 médias empresas
               </p>
@@ -402,55 +402,61 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <Card
                 key={index}
-                className="p-8 hover-elevate transition-all duration-300 hover:shadow-lg rounded-2xl border border-card-border fade-in-on-scroll opacity-0"
+                className="group relative p-10 hover-elevate transition-all duration-500 hover:shadow-2xl hover:scale-105 rounded-3xl border border-card-border/50 backdrop-blur-sm bg-card/80 fade-in-on-scroll opacity-0 overflow-hidden"
                 style={{ transitionDelay: `${index * 100}ms` }}
                 data-testid={`card-feature-${index}`}
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-primary to-ring rounded-xl flex items-center justify-center mb-6">
-                  <feature.icon className="w-6 h-6 text-primary-foreground" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative">
+                  <div className="w-14 h-14 bg-gradient-to-br from-primary via-primary/90 to-accent rounded-2xl flex items-center justify-center mb-8 shadow-lg group-hover:shadow-xl transition-shadow">
+                    <feature.icon className="w-7 h-7 text-primary-foreground" />
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-4 tracking-tight">
+                    {feature.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed text-[15px]">
+                    {feature.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {feature.description}
-                </p>
               </Card>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="vantagens" className="py-20 lg:py-32 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+      <section id="vantagens" className="py-24 lg:py-40 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.08),transparent_70%)]" />
+        
+        <div className="relative max-w-7xl mx-auto px-6">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground mb-6 tracking-tight">
               Por que escolher o Pavisoft?
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-light">
               Tecnologia moderna e design pensado para facilitar seu dia a dia
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {advantages.map((advantage, index) => (
               <div
                 key={index}
-                className="text-center fade-in-on-scroll opacity-0"
+                className="text-center group fade-in-on-scroll opacity-0"
                 style={{ transitionDelay: `${index * 100}ms` }}
                 data-testid={`advantage-${index}`}
               >
-                <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <advantage.icon className="w-8 h-8 text-accent" />
+                <div className="w-20 h-20 bg-gradient-to-br from-accent/15 to-primary/15 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <advantage.icon className="w-10 h-10 text-accent" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-3">
+                <h3 className="text-xl font-bold text-foreground mb-4 tracking-tight">
                   {advantage.title}
                 </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed">
                   {advantage.description}
                 </p>
               </div>
@@ -472,7 +478,7 @@ export default function Home() {
 
           <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto items-start">
             <Card
-              className="p-8 lg:p-10 rounded-2xl border border-card-border hover-elevate transition-all duration-300 fade-in-on-scroll opacity-0"
+              className="p-10 lg:p-12 rounded-3xl border border-card-border/50 hover-elevate transition-all duration-500 hover:shadow-2xl hover:border-primary/30 fade-in-on-scroll opacity-0 bg-card/80 backdrop-blur-sm"
               data-testid="card-plan-gratuito"
             >
               <div className="mb-8">
@@ -520,12 +526,12 @@ export default function Home() {
             </Card>
 
             <Card
-              className="p-8 lg:p-10 rounded-2xl border-2 border-accent bg-gradient-to-br from-card to-accent/5 hover-elevate transition-all duration-300 shadow-xl relative lg:scale-105 fade-in-on-scroll opacity-0"
+              className="p-10 lg:p-12 rounded-3xl border-2 border-accent/50 bg-gradient-to-br from-card via-accent/5 to-primary/5 hover-elevate transition-all duration-500 shadow-2xl relative lg:scale-105 hover:scale-110 fade-in-on-scroll opacity-0 backdrop-blur-sm"
               style={{ transitionDelay: "100ms" }}
               data-testid="card-plan-premium"
             >
-              <div className="absolute -top-4 right-8">
-                <div className="bg-accent text-accent-foreground px-4 py-1 rounded-full text-sm font-semibold">
+              <div className="absolute -top-5 right-8">
+                <div className="bg-gradient-to-r from-accent to-accent/90 text-accent-foreground px-6 py-2 rounded-full text-sm font-bold shadow-lg">
                   Recomendado
                 </div>
               </div>
@@ -682,8 +688,9 @@ export default function Home() {
         </div>
       </section>
 
-      <footer id="contato" className="bg-primary text-primary-foreground py-16">
-        <div className="max-w-7xl mx-auto px-6">
+      <footer id="contato" className="relative bg-gradient-to-br from-primary via-primary/95 to-primary/90 text-primary-foreground py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(251,146,60,0.15),transparent_50%)]" />
+        <div className="relative max-w-7xl mx-auto px-6">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
             <div>
               <div className="flex items-center gap-2 mb-6">
