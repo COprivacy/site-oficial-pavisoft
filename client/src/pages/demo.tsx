@@ -1,9 +1,15 @@
-
 import { useState, useEffect } from "react";
 import { Package, Moon, Sun, ArrowLeft, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useLocation } from "wouter";
+
+import dashboardImg from "@assets/dashboard_1760974550061.png";
+import produtosImg from "@assets/produtos_1760974550061.png";
+import pdvImg from "@assets/ponto de venda_1760974550062.png";
+import relatoriosImg from "@assets/relatorios_1760974550062.png";
+import inventarioImg from "@assets/inventário_1760974550062.png";
+import clientesImg from "@assets/clientes_1760974550060.png";
 
 export default function Demo() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -28,32 +34,32 @@ export default function Demo() {
     {
       title: "Dashboard Principal",
       description: "Visualização completa das métricas e estatísticas",
-      placeholder: "Screenshot 1",
+      image: dashboardImg,
     },
     {
       title: "Gestão de Produtos",
       description: "Interface intuitiva para gerenciar seu inventário",
-      placeholder: "Screenshot 2",
+      image: produtosImg,
     },
     {
       title: "Ponto de Venda (PDV)",
       description: "Sistema de vendas rápido e eficiente",
-      placeholder: "Screenshot 3",
+      image: pdvImg,
     },
     {
       title: "Relatórios Detalhados",
       description: "Análises completas do seu negócio",
-      placeholder: "Screenshot 4",
+      image: relatoriosImg,
     },
     {
       title: "Controle de Estoque",
       description: "Monitore entradas, saídas e movimentações",
-      placeholder: "Screenshot 5",
+      image: inventarioImg,
     },
     {
       title: "Gestão de Clientes",
       description: "Cadastro completo com histórico de compras",
-      placeholder: "Screenshot 6",
+      image: clientesImg,
     },
   ];
 
@@ -68,6 +74,7 @@ export default function Demo() {
                 variant="ghost"
                 onClick={() => navigate("/")}
                 className="rounded-md"
+                data-testid="button-back"
               >
                 <ArrowLeft className="w-5 h-5" />
               </Button>
@@ -86,6 +93,7 @@ export default function Demo() {
               variant="ghost"
               onClick={toggleTheme}
               className="rounded-md"
+              data-testid="button-theme-toggle"
             >
               {theme === "light" ? (
                 <Moon className="w-5 h-5" />
@@ -114,23 +122,21 @@ export default function Demo() {
               <Card
                 key={index}
                 className="overflow-hidden hover-elevate transition-all duration-300 rounded-2xl border border-card-border"
+                data-testid={`card-screenshot-${index + 1}`}
               >
-                <div className="aspect-video bg-gradient-to-br from-primary/10 via-accent/5 to-primary/5 flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
-                  <div className="relative z-10 text-center p-6">
-                    <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                      <Package className="w-8 h-8 text-primary" />
-                    </div>
-                    <p className="text-muted-foreground font-medium">
-                      {screenshot.placeholder}
-                    </p>
-                  </div>
+                <div className="aspect-video bg-muted relative overflow-hidden">
+                  <img
+                    src={screenshot.image}
+                    alt={screenshot.title}
+                    className="w-full h-full object-cover"
+                    data-testid={`img-screenshot-${index + 1}`}
+                  />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                  <h3 className="text-lg font-semibold text-foreground mb-2" data-testid={`text-title-${index + 1}`}>
                     {screenshot.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-muted-foreground" data-testid={`text-description-${index + 1}`}>
                     {screenshot.description}
                   </p>
                 </div>
@@ -154,7 +160,7 @@ export default function Demo() {
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(251,146,60,0.1),transparent_70%)]" />
                 
                 <div className="relative z-10 text-center">
-                  <div className="w-24 h-24 bg-primary/90 hover:bg-primary rounded-full flex items-center justify-center mx-auto mb-6 cursor-pointer transition-all hover:scale-110 shadow-xl">
+                  <div className="w-24 h-24 bg-primary/90 hover:bg-primary rounded-full flex items-center justify-center mx-auto mb-6 cursor-pointer transition-all hover:scale-110 shadow-xl" data-testid="button-video-play">
                     <Play className="w-12 h-12 text-primary-foreground ml-1" />
                   </div>
                   <p className="text-xl font-semibold text-foreground mb-2">
@@ -221,6 +227,7 @@ export default function Demo() {
               size="lg"
               className="bg-accent hover:bg-accent text-accent-foreground font-semibold text-base px-8 border border-accent-border shadow-lg"
               onClick={() => navigate("/")}
+              data-testid="button-back-home"
             >
               Voltar para a Página Inicial
             </Button>
@@ -237,6 +244,7 @@ export default function Demo() {
             size="lg"
             variant="outline"
             className="bg-white/10 hover:bg-white/20 text-white border-white/30 backdrop-blur-sm font-semibold"
+            data-testid="button-test-free"
           >
             Testar Gratuitamente
           </Button>
