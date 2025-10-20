@@ -470,7 +470,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto items-start">
+          <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto items-start">
             <Card
               className="p-8 lg:p-10 rounded-2xl border border-card-border hover-elevate transition-all duration-300 fade-in-on-scroll opacity-0"
               data-testid="card-plan-gratuito"
@@ -592,6 +592,90 @@ export default function Home() {
                 data-testid="button-escolher-premium"
               >
                 Começar Teste Grátis
+              </Button>
+            </Card>
+
+            <Card
+              className="p-8 lg:p-10 rounded-2xl border border-card-border hover-elevate transition-all duration-300 fade-in-on-scroll opacity-0 relative"
+              style={{ transitionDelay: "200ms" }}
+              data-testid="card-plan-anual"
+            >
+              <div className="absolute -top-4 right-8">
+                <div className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
+                  Melhor Valor
+                </div>
+              </div>
+
+              <div className="mb-8">
+                <h3 className="text-2xl font-bold text-foreground mb-2">
+                  Plano Anual
+                </h3>
+                <div className="flex items-baseline gap-2 mb-2">
+                  <span className="text-5xl font-bold text-primary">R$ 39</span>
+                  <span className="text-muted-foreground">/mês</span>
+                </div>
+                <div className="mb-4">
+                  <span className="text-sm text-muted-foreground line-through">R$ 588/ano</span>
+                  <span className="text-lg font-semibold text-primary ml-2">R$ 468/ano</span>
+                </div>
+                <p className="text-muted-foreground">
+                  Economize 20% com pagamento anual
+                </p>
+              </div>
+
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground">
+                    Produtos ilimitados
+                  </span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground">PDV integrado com código de barras</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground">
+                    Dashboard em tempo real com gráficos
+                  </span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground">Relatórios avançados em PDF</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground">Controle de vencimento automático</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground">
+                    Gestão de clientes e fornecedores
+                  </span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground">
+                    Personalização completa da marca
+                  </span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground">Suporte prioritário</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground font-semibold">2 meses grátis (economia de R$ 120)</span>
+                </div>
+              </div>
+
+              <Button
+                size="lg"
+                className="w-full font-semibold"
+                data-testid="button-escolher-anual"
+              >
+                Assinar Plano Anual
               </Button>
             </Card>
           </div>
