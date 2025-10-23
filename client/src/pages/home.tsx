@@ -172,12 +172,14 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-between h-18">
             <div className="flex items-center gap-2">
-              <img 
-                src={pavisoftLogo} 
-                alt="Pavisoft Logo" 
-                className="w-9 h-9 rounded-md"
-                data-testid="logo-header"
-              />
+              <div className="w-9 h-9 overflow-hidden flex items-center justify-center">
+                <img 
+                  src={pavisoftLogo} 
+                  alt="Pavisoft Logo" 
+                  className="w-11 h-11 object-cover scale-125"
+                  data-testid="logo-header"
+                />
+              </div>
               <span className="text-xl font-bold text-foreground">
                 Pavisoft Sistemas
               </span>
@@ -719,12 +721,14 @@ export default function Home() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
             <div>
               <div className="flex items-center gap-2 mb-6">
-                <img 
-                  src={pavisoftLogo} 
-                  alt="Pavisoft Logo" 
-                  className="w-9 h-9 rounded-md"
-                  data-testid="logo-footer"
-                />
+                <div className="w-9 h-9 overflow-hidden flex items-center justify-center">
+                  <img 
+                    src={pavisoftLogo} 
+                    alt="Pavisoft Logo" 
+                    className="w-11 h-11 object-cover scale-125"
+                    data-testid="logo-footer"
+                  />
+                </div>
                 <span className="text-xl font-bold">Pavisoft Sistemas</span>
               </div>
               <p className="text-primary-foreground/80 leading-relaxed">
