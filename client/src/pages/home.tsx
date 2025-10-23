@@ -470,52 +470,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 lg:py-24 bg-muted/30">
+      <section className="py-12 border-y border-border/50">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Nossos Parceiros
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Integrado com as melhores soluções do mercado para pagamentos e emissão de notas fiscais
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card
-              className="group p-8 lg:p-12 rounded-3xl border border-card-border/50 hover-elevate transition-all duration-500 hover:shadow-xl hover:border-primary/30 bg-card/80 backdrop-blur-sm fade-in-on-scroll opacity-0"
-              data-testid="card-partner-mercadopago"
-            >
-              <div className="flex flex-col items-center text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-[#00B1EA]/10 to-[#009EE3]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <SiMercadopago className="w-12 h-12 text-[#00B1EA]" />
-                </div>
-                <h3 className="text-2xl font-bold text-foreground mb-3">
-                  Mercado Pago
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Aceite pagamentos com cartão de crédito, débito, PIX e boleto de forma segura e rápida
-                </p>
-              </div>
-            </Card>
-
-            <Card
-              className="group p-8 lg:p-12 rounded-3xl border border-card-border/50 hover-elevate transition-all duration-500 hover:shadow-xl hover:border-primary/30 bg-card/80 backdrop-blur-sm fade-in-on-scroll opacity-0"
-              style={{ transitionDelay: "100ms" }}
-              data-testid="card-partner-focusnfe"
-            >
-              <div className="flex flex-col items-center text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-accent/10 to-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <FileText className="w-12 h-12 text-accent" />
-                </div>
-                <h3 className="text-2xl font-bold text-foreground mb-3">
-                  Focus NFe
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Emissão automática de notas fiscais eletrônicas (NF-e, NFC-e e NFS-e) com conformidade total
-                </p>
-              </div>
-            </Card>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16">
+            <div className="flex items-center gap-3 text-muted-foreground">
+              <Shield className="w-5 h-5 text-primary" />
+              <span className="text-sm">Pagamento seguro com</span>
+              <SiMercadopago className="w-8 h-8 text-[#00B1EA]" />
+            </div>
+            <div className="flex items-center gap-3 text-muted-foreground">
+              <FileText className="w-5 h-5 text-accent" />
+              <span className="text-sm">Emissão de NFe via Focus NFe</span>
+            </div>
           </div>
         </div>
       </section>
