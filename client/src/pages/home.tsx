@@ -25,7 +25,7 @@ import { SiX, SiMercadopago } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useLocation } from "wouter";
-import pavisoftLogo from "@assets/image_1761258860337.png";
+import pavisoftLogo from "@assets/Captura de tela 2025-10-23 193412_1761259206548.png";
 
 export default function Home() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -172,14 +172,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-between h-18">
             <div className="flex items-center gap-2">
-              <div className="w-9 h-9 overflow-hidden flex items-center justify-center">
-                <img 
-                  src={pavisoftLogo} 
-                  alt="Pavisoft Logo" 
-                  className="w-11 h-11 object-cover scale-125"
-                  data-testid="logo-header"
-                />
-              </div>
+              <img 
+                src={pavisoftLogo} 
+                alt="Pavisoft Logo" 
+                className="w-9 h-9 object-contain"
+                data-testid="logo-header"
+              />
               <span className="text-xl font-bold text-foreground">
                 Pavisoft Sistemas
               </span>
@@ -721,14 +719,12 @@ export default function Home() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
             <div>
               <div className="flex items-center gap-2 mb-6">
-                <div className="w-9 h-9 overflow-hidden flex items-center justify-center">
-                  <img 
-                    src={pavisoftLogo} 
-                    alt="Pavisoft Logo" 
-                    className="w-11 h-11 object-cover scale-125"
-                    data-testid="logo-footer"
-                  />
-                </div>
+                <img 
+                  src={pavisoftLogo} 
+                  alt="Pavisoft Logo" 
+                  className="w-9 h-9 object-contain"
+                  data-testid="logo-footer"
+                />
                 <span className="text-xl font-bold">Pavisoft Sistemas</span>
               </div>
               <p className="text-primary-foreground/80 leading-relaxed">
